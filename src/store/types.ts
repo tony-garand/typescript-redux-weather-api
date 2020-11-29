@@ -2,6 +2,10 @@ export const GET_WEATHER = 'GET_WEATHER';
 export const SET_LOADING = 'SET_LOADING';
 export const SET_ERROR = 'SET_ERROR';
 export const SET_ALERT = 'SET_ALERT';
+export const SET_THEME = 'SET_THEME';
+export const GET_LOCATION = 'GET_LOCATION';
+export const SET_LOCATION = 'SET_LOCATION';
+
 
 export interface Weather {
     description: string;
@@ -83,3 +87,31 @@ export interface AlertState {
     message: string;
 }
 
+export interface UserData {
+    locations: {
+        saved: WeatherData | null;
+    }
+    theme: string
+}    
+
+export interface UserThemeAction {
+    type: typeof SET_THEME;
+    payload: string;
+}
+
+export interface SetUserLocationAction {
+    type: typeof SET_LOCATION;
+    payload: string;
+}
+
+export interface GetUserLocationAction {
+    type: typeof GET_LOCATION;
+    payload: string;
+}
+
+export type UserAction = UserThemeAction | SetUserLocationAction | GetUserLocationAction;
+
+export interface UserState {
+    data: UserData | null;
+    theme: string,
+}

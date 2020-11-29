@@ -28,9 +28,8 @@ const Weather: FC<WeatherProps> = ({ data }) => {
                     width="size-3000">
                         <h3>Temp</h3>
                         <View>
-                            <p>{data.main.temp}</p>
-                            <p>{fahrenheit}</p>
-                            <p>{celsius}</p>
+                            <p>{fahrenheit} {'\u00b0'}F</p>
+                            <p>{celsius} {'\u00b0'}C</p>
                         </View>
                     </View>
                     <View
